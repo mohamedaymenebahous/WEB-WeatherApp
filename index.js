@@ -2,17 +2,15 @@ let container = document.querySelector(".container");
 let search = document.querySelector(".search-box");
 let weatherBox = document.querySelector(".weather-box");
 let weatherDetails = document.querySelector(".weather-details");
-let eror404 = document.querySelector(".not-found");
+let error404 = document.querySelector(".not-found");
 
 search.addEventListener("click", () => {
 
-    let APIKey = "728b0ee6df5687559812bd3169ad77b7";
+    let APIKey = "d57b43464c3a170a5142bb1f441be464";
     let city = document.querySelector(".search-box input").value;
 
     if(city === "")
-    {
         return;
-    }
 
     fetch(`https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${APIKey}`)
         .then(response => response.json())
@@ -23,12 +21,12 @@ search.addEventListener("click", () => {
                     container.style.height = "400px";
                     weatherBox.style.display = "none";
                     weatherDetails.style.display = "none";
-                    eror404.style.display = "block";
+                    error404.style.display = "block";
                     error404.classList.add("fadeIn");
                     return;
                 }
 
-                eror404.style.display = "none";
+                error404.style.display = "none";
                 error404.classList.remove("fadeIn");
 
                 let image = document.querySelector(".weather-box img");

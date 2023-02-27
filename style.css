@@ -142,6 +142,7 @@ body
 .weather-details .wind
 {
     padding-left: 20px;
+    margin-right: 20px;
     justify-content: flex-end;
 }
 
